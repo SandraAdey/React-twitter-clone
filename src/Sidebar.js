@@ -28,6 +28,7 @@ function Sidebar(){
 
         {/* Button -> Tweet */}
         <button className="tweetBox__tweetButton">Tweet</button>
+        
       </div>
     );
 }
