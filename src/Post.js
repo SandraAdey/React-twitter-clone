@@ -1,7 +1,8 @@
 import React, { forwardRef } from "react";
 import "./Post.css";
-import { Avatar } from "@material-ui/core";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
+import { Avatar, Button } from "@mui/material";
+
+import VerifiedIcon from "@mui/icons-material/Verified";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import LoopIcon from "@mui/icons-material/Loop";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -20,7 +21,7 @@ const Post = forwardRef(
               <h3>
                 {displayName}{" "}
                 <span className="post__headerSpecial">
-                  {verified && <VerifiedUserIcon className="post__badge" />} @
+                  {verified && <VerifiedIcon className="post__badge" />} @
                   {username}
                 </span>
               </h3>
@@ -31,7 +32,7 @@ const Post = forwardRef(
           </div>
           <img src={image} alt="" />
           <div className="post__footer">
-            <ChatBubbleOutlineIcon fontSize="small" />
+            <ChatBubbleIcon fontSize="small" />
             <LoopIcon fontSize="small" />
             <FavoriteBorderIcon fontSize="small" />
             <PublishIcon fontSize="small" />
