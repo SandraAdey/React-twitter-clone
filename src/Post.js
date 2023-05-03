@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import "./Post.css";
-import { Avatar, Button } from "@mui/material";
+import { Avatar } from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
@@ -11,7 +11,7 @@ import PublishIcon from "@mui/icons-material/Publish";
 const Post = forwardRef(
   ({ displayName, username, verified, text, image, avatar }, ref) => {
     return (
-      <div className="post" ref={ref}>
+      <div className="post">
         <div className="post__avatar">
           <Avatar src={avatar} />
         </div>
@@ -30,7 +30,8 @@ const Post = forwardRef(
               <p>{text}</p>
             </div>
           </div>
-          <img src={image} alt="" />
+          <img src={image} 
+          alt="" />
           <div className="post__footer">
             <ChatBubbleIcon fontSize="small" />
             <LoopIcon fontSize="small" />
