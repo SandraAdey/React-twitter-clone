@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
-import db from "./Firebase";
+import { postsDB } from "./Firebase";
 import FlipMove from "react-flip-move";
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { getDocs } from 'firebase/firestore';
 
 
 function Feed() {
@@ -13,8 +13,7 @@ function Feed() {
   useEffect(() => {
 
     async function getPosts () {
-      const query = collection(db, "posts");
-      const snapshot = await getDocs(query);
+      const snapshot = await getDocs(postsDB);
       const docs = snapshot.docs.map(doc => doc.data());
       setPosts(docs)
     }
