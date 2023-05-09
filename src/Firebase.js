@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCCXv3z0Lo0OKVAeniMdfJm_WwbD_16l0",
@@ -16,3 +16,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp)
 
 export default db;
+
+// reference to the collection
+const postsDB = collection(db, "posts");
+export { postsDB, db }

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./TweetBox.css";
 import { Avatar, Button } from "@mui/material";
-import db from "./Firebase";
-import { doc, setDoc } from "firebase/firestore"; 
+import { postsDB } from "./Firebase";
+import { addDoc } from "firebase/firestore";
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState("");
@@ -10,7 +10,7 @@ function TweetBox() {
 
   const sendTweet = async (e) => {
     e.preventDefault();
-    await setDoc(doc(db, "posts"), {
+    const newRecord = await addDoc(postsDB, {
       displayName: "cherié 🌸",
       username: "dearIy_beIoved",
       verified: true,
@@ -22,6 +22,7 @@ function TweetBox() {
 
     setTweetMessage("");
     setTweetImage("");
+    return newRecord;
   };
 
   return (
