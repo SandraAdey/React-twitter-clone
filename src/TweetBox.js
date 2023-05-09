@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "./TweetBox.css";
 import { Avatar, Button } from "@mui/material";
 import db from "./Firebase";
+import { doc, setDoc } from "firebase/firestore"; 
 
 function TweetBox() {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
-  const sendTweet = (e) => {
+  const sendTweet = async (e) => {
     e.preventDefault();
-
-    db.collection("posts").add({
+    await setDoc(doc(db, "posts"), {
       displayName: "cherié 🌸",
       username: "dearIy_beIoved",
       verified: true,

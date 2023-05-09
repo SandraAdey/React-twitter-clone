@@ -4,15 +4,21 @@ import Post from "./Post";
 import "./Feed.css";
 import db from "./Firebase";
 import FlipMove from "react-flip-move";
+import { collection, getDocs } from 'firebase/firestore/lite';
 
 
 function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) =>
-      setPosts(snapshot.docs.map((doc) => doc.data()))
-    );
+
+    async function getPosts () {
+      const query = collection(db, "posts");
+      const snapshot = await getDocs(query);
+      const docs = snapshot.docs.map(doc => doc.data());
+      setPosts(docs)
+    }
+    getPosts()
   }, []);
 
   return (
