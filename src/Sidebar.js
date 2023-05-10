@@ -9,6 +9,7 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
+import Popup from "reactjs-popup";
 
 
 
@@ -27,8 +28,9 @@ function Sidebar(){
         <SidebarOption Icon={MoreHorizOutlinedIcon} text="More" />
 
         {/* Button -> Tweet */}
-        <button className="tweetBox__tweetButton">Tweet</button>
-        
+        <button className="tweetButton">Tweet</button>
+
+        <SidebarOption Icon={MoreHorizOutlinedIcon} text="cherié 🌸 " />
       </div>
     );
 }

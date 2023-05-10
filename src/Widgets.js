@@ -19,15 +19,18 @@ function Widgets() {
         <h2>What's happening</h2>
 
         <TwitterTweetEmbed tweetId={"1608053293011599360"} />
+        <TwitterTweetEmbed tweetId={"1619783420527378433"} />
 
         <TwitterTimelineEmbed
           sourceType="profile"
-          screenName="cleverqazi"
+          screenName="cats with jobs 🛠"
           options={{ height: 400 }}
         />
 
         <TwitterShareButton
-          url={"https://facebook.com/cleverprogrammer"}
+          url={
+            "https://twitter.com/CatWorkers/status/1619783420527378433?cxt=HHwWgoDQmYyc0PosAAAA"
+          }
           options={{ text: "#reactjs is awesome", via: "cleverqazi" }}
         />
       </div>
