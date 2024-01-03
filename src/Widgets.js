@@ -31,7 +31,7 @@ function Widgets() {
           url={
             "https://twitter.com/CatWorkers/status/1619783420527378433?cxt=HHwWgoDQmYyc0PosAAAA"
           }
-          options={{ text: "#reactjs is awesome", via: "cleverqazi" }}
+          options={{ text: "#reactjs is awesome", via: "sandy" }}
         />
       </div>
     </div>
